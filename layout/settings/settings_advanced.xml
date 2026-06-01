@@ -1,0 +1,178 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/csgostyles.css" />
+		<include src="file://{resources}/styles/settings/settings.css" />
+		<include src="file://{resources}/styles/mainmenu.css"/>
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/settingsmenu_shared.js" />
+		<include src="file://{resources}/scripts/common/iteminfo.js" />
+	</scripts>
+
+	<Panel useglobalcontext="true" class="SettingsMenuTab" >
+
+		<Panel class="content-navbar content-navbar--short" >
+			<Panel class="content-navbar__tabs content-navbar__tabs--small">
+				<RadioButton onactivate="SettingsMenuShared.ScrollToId('SettingsAdvancedBinds')" group="SettingsAdvanced">
+					<Label text="#adv_settings_advanced_binds"/>
+				</RadioButton>
+				<RadioButton onactivate="SettingsMenuShared.ScrollToId('SettingsNetGraph')" group="SettingsAdvanced">
+					<Label text="#adv_settings_netgraph"/>
+				</RadioButton>
+				<RadioButton onactivate="SettingsMenuShared.ScrollToId('SettingsServers')" group="SettingsAdvanced">
+					<Label text="#adv_settings_servers"/>
+				</RadioButton>
+				<RadioButton onactivate="SettingsMenuShared.ScrollToId('SettingsViewmodel')" group="SettingsAdvanced">
+					<Label text="#adv_settings_viewmodel"/>
+				</RadioButton>
+			</Panel>
+		</Panel>
+
+		<Panel class="SettingsMenuTabContent vscroll">
+
+			<Panel id="SettingsAdvancedBinds" class="SettingsBackground">
+				<Panel class="SettingsSectionTitleContainer">
+					<Label class="SettingsSectionTitleLabel" text="#adv_settings_advanced_binds" />
+				</Panel>
+				<Panel class ="top-bottom-flow full-width">
+
+					<CSGOSettingsKeyBinder text="#adv_open_adminpanel" id="adminpanel" bind="sm_admin"/>
+					<Panel class="horizontal-separator"/>
+
+					<CSGOSettingsKeyBinder text="#adv_open_vippanel" id="vippanel" bind="sm_vip"/>
+					<Panel class="horizontal-separator"/>
+
+					<CSGOSettingsKeyBinder text="#adv_open_skinspanel" id="skinspanel" bind="sm_ws"/>
+					<Panel class="horizontal-separator"/>
+
+					<CSGOSettingsKeyBinder text="#adv_open_glovespanel" id="glovespanel" bind="sm_gloves"/>
+					<Panel class="horizontal-separator"/>
+
+					<CSGOSettingsKeyBinder text="#adv_open_knifespanel" id="knifespanel" bind="sm_knife"/>
+					<Panel class="horizontal-separator"/>
+
+					<CSGOSettingsKeyBinder text="#adv_vips" id="vips" bind="sm_vips"/>
+					<Panel class="horizontal-separator"/>
+
+					<CSGOSettingsKeyBinder text="#adv_rank" id="rank" bind="say !rank"/>
+					<Panel class="horizontal-separator"/>
+
+					<CSGOSettingsKeyBinder text="#adv_respawn" id="respawn" bind="sm_respawn"/>
+					<Panel class="horizontal-separator"/>
+
+					<CSGOSettingsKeyBinder text="#adv_noclip" id="noclip" bind="noclip"/>
+					<Panel class="horizontal-separator"/>
+
+					<CSGOSettingsKeyBinder text="#adv_togglehand" id="togglehand" bind="toggle cl_righthand 0 1"/>
+					<Panel class="horizontal-separator"/>
+
+                </Panel>
+            </Panel>
+
+			<Panel id="SettingsNetGraph" class="SettingsBackground">
+				<Panel class="SettingsSectionTitleContainer">
+					<Label class="SettingsSectionTitleLabel" text="#adv_settings_netgraph" />
+				</Panel>
+				<Panel class ="top-bottom-flow full-width">
+
+					<Panel class="SettingsMenuDropdownContainer">
+						<Label class="half-width" text="#adv_settings_net_graph_status"/>
+						<CSGOSettingsEnumDropDown class="PopupButton White" convar="net_graph">
+								<Label text="#adv_settings_net_graph_1" value="1" id="netgraph1"/>
+								<Label text="#adv_settings_net_graph_0" value="0" id="netgraph0"/>
+						</CSGOSettingsEnumDropDown>
+					</Panel>
+
+					<Panel class="SettingsMenuDropdownContainer">
+						<Label class="half-width" text="#adv_settings_net_graph_pos"/>
+						<CSGOSettingsEnumDropDown class="PopupButton White" convar="net_graphpos">
+								<Label text="#adv_settings_net_graphpos_1" value="1" id="netgraphpos1"/>
+								<Label text="#adv_settings_net_graphpos_2" value="2" id="netgraphpos2"/>
+								<Label text="#adv_settings_net_graphpos_3" value="3" id="netgraphpos3"/>
+						</CSGOSettingsEnumDropDown>
+					</Panel>
+
+					<Panel class="SettingsMenuDropdownContainer">
+						<Label class="half-width" text="#adv_settings_net_graph_font"/>
+						<CSGOSettingsEnumDropDown class="PopupButton White" convar="net_graphproportionalfont">
+								<Label text="#adv_settings_net_graph_font_1" value="1" id="netgraphfont1"/>
+								<Label text="#adv_settings_net_graph_font_0" value="0" id="netgraphfont0"/>
+						</CSGOSettingsEnumDropDown>
+					</Panel>
+
+					<CSGOSettingsSlider text="#adv_settings_netgraph_height" max="950" min="0" displayprecision="2" convar="net_graphheight"/>
+					<Panel class="horizontal-separator"/>
+
+                </Panel>
+            </Panel>
+
+			<Panel id="SettingsServers" class="SettingsBackground">
+				<Panel class="SettingsSectionTitleContainer">
+					<Label class="SettingsSectionTitleLabel" text="#adv_settings_servers" />
+				</Panel>
+				<Panel class ="top-bottom-flow full-width">
+
+					<Panel class="SettingsMenuDropdownContainer">
+						<Label class="half-width" text="#adv_settings_download_filter"/>
+						<CSGOSettingsEnumDropDown class="PopupButton White" convar="cl_downloadfilter">
+								<Label text="#adv_settings_download_filter_all" value="all" id="downfilterall"/>
+								<Label text="#adv_settings_download_filter_none" value="none" id="downfilternone"/>
+								<Label text="#adv_settings_download_filter_nosounds" value="nosounds" id="downfilternosounds"/>
+						</CSGOSettingsEnumDropDown>
+					</Panel>
+
+				</Panel>
+
+			</Panel>
+
+			<Panel id="SettingsViewmodel" class="SettingsBackground">
+				<Panel class="SettingsSectionTitleContainer">
+					<Label class="SettingsSectionTitleLabel" text="#adv_settings_viewmodel" />
+				</Panel>
+				<Panel class ="top-bottom-flow full-width">
+
+					<Panel class="SettingsMenuDropdownContainer">
+						<Label text="#adv_preset_viewmodels" class="half-width"/>
+						<CSGOSettingsEnumDropDown class="PopupButton White" convar="viewmodel_presetpos">
+							<Label text="#adv_settings_viewmodelposdesktop" value="1" id ="viewmodelpreset0"/>
+							<Label text="#adv_settings_viewmodelposcouch" value="2" id ="viewmodelpreset1"/>
+							<Label text="#adv_settings_viewmodelposclassic" value="3" id ="viewmodelpreset2"/>
+							<Label text="#adv_settings_viewmodelposcustom" value="4" id ="viewmodelpreset4"/>
+						</CSGOSettingsEnumDropDown>
+					</Panel>
+					<Panel class="horizontal-separator"/>
+
+					<Panel class="SettingsMenuDropdownContainer">
+						<Label text="#adv_settings_hand" class="half-width"/>
+						<CSGOSettingsEnumDropDown class="PopupButton White" convar="cl_righthand">
+							<Label text="#adv_settings_left_hand" value="0" id ="viewmodelhand0"/>
+							<Label text="#adv_settings_right_hand" value="1" id ="viewmodelhand1"/>
+						</CSGOSettingsEnumDropDown>
+					</Panel>
+					<Panel class="horizontal-separator"/>
+
+					<TooltipPanel class="SettingsMenuDropdownContainer" tooltip="#adv_viewmodel_offset_x_tooltip">
+						<CSGOSettingsSlider text="#adv_viewmodel_offset_x" max="2.5" min="-2" displayprecision="2" convar="viewmodel_offset_x"/>
+					</TooltipPanel>
+					<Panel class="horizontal-separator"/>
+
+					<TooltipPanel class="SettingsMenuDropdownContainer" tooltip="#adv_viewmodel_offset_y_tooltip">
+						<CSGOSettingsSlider text="#adv_viewmodel_offset_y" max="2" min="-2" displayprecision="2" convar="viewmodel_offset_y"/>
+					</TooltipPanel>
+					<Panel class="horizontal-separator"/>
+
+					<TooltipPanel class="SettingsMenuDropdownContainer" tooltip="#adv_viewmodel_offset_z_tooltip">
+						<CSGOSettingsSlider text="#adv_viewmodel_offset_z" max="2" min="-2" displayprecision="2" convar="viewmodel_offset_z"/>
+					</TooltipPanel>
+					<Panel class="horizontal-separator"/>
+
+					<TooltipPanel class="SettingsMenuDropdownContainer" tooltip="#adv_viewmodel_fov_tooltip">
+						<CSGOSettingsSlider text="#adv_viewmodel_fov" max="68" min="54" displayprecision="2" convar="viewmodel_fov"/>
+					</TooltipPanel>				
+
+                </Panel>
+            </Panel>
+
+        </Panel>
+  </Panel>
+</root>
