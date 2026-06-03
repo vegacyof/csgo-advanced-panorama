@@ -9,6 +9,7 @@ Modified Panorama CSGO with the removal of outdated features and the addition of
 3. The Advanced Settings tab is in the settings with the ability to configure additional binds, net_graph, hand position, and server.
 4. Showing the Spectator ping in TAB
 5. The store panel remains in the main menu.
+6. Setting the Render Aspect Ratio in the Video Settings
 
 ## Installation
 
